@@ -183,6 +183,12 @@ input:focus,
 textarea:focus {
   box-shadow: inset 0px 3px 10px 1px rgb(82, 0, 136);
 }
+.sfondo {
+  background-image: url("./assets/image/sfondo_pagine_progetti.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 @keyframes fade-zoom-anim {
   0% {
     opacity: 0;
