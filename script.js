@@ -1,6 +1,31 @@
+(function () {
+  emailjs.init({
+    publicKey: "V0EXCnXFo77Yp0lXs",
+  });
+})();
+
+let nomeUtente = "";
+let emailUtente = "";
+let testo = "";
+const useState = () => {
+  let state = "";
+  const changeState = (e) => {
+    state = e;
+  };
+  return {
+    state: state,
+    changeState: changeState,
+  };
+};
+const changeNomeUtente = (e) => {
+  nomeUtente = e.target.value;
+  console.log(nomeUtente);
+};
+
 const handleSubmit = (e) => {
   e.preventDefault();
 };
+
 // const randomNavigationItemsLightUp = () => {
 //   let navItems = document.querySelectorAll(".nav-item-init-anim");
 

@@ -115,12 +115,16 @@
               <img class="croce" src="./assets/image/croce.png" alt="croce" />
               <h2 class="ind-title position-tertiary">Competenze</h2>
             </div>
-            <p>
+            <p class="reverse-text-anim">
               La mia curiosità e la mia empatia mi accompagnano da sempre, permettendomi di fare attenzione ai dettagli
               e creare connessioni con le persone. Infatti tra i miei obiettivi ci sono: il coinvolgere e stupire gli
               utenti attraverso le mie grafiche e condividere con loro questi piccoli momenti.
             </p>
-            <div class="text-end"><button class="cv-button">Scarica Curriculum</button></div>
+            <div class="text-end">
+              <a href="./assets/CURRICULUM.pdf" download="CvDeniseSaggioro"
+                ><button class="cv-button">Scarica Curriculum</button>
+              </a>
+            </div>
           </div>
         </div>
         <div class="d-flex justify-content-center no-wrap">
@@ -152,7 +156,7 @@
       <section id="contatti" class="m-page">
         <div class="row mb-5">
           <div class="col-7 d-flex justify-content-center align-items-center">
-            <p>
+            <p class="text-anim">
               Voglio creare contenuti che diano sempre più visibilità ai clienti che si rivolgono a me anche attraverso
               un'interfaccia grafica che si possa percepire come un'esperienza e dove la UX risulti fluida, intuitiva e
               divertente. Grazie ad accurate e costanti ricerche di marketing e allo sfruttamento delle principali
@@ -180,7 +184,7 @@
           </div>
           <div class="col-8">
             <form class="d-flex flex-column" onsubmit="handleSubmit(event)">
-              <input class="mb-2" type="text" placeholder="Inserisci il tuo nome" />
+              <input class="mb-2" type="text" placeholder="Inserisci il tuo nome" onchange="changeNomeUtente(event)" />
               <input class="mb-2" type="mail" placeholder="Inserisci la tua email" />
               <textarea class="mb-4" name="" id="" cols="30" rows="10" placeholder="Scrivimi qui!"></textarea>
               <div class="text-end">
@@ -200,5 +204,6 @@
     integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
     crossorigin="anonymous"
   ></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
   <script src="./script.js"></script>
 </html>
