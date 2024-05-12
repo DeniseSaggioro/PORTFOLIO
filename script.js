@@ -49,6 +49,7 @@ const handleSubmit = (e) => {
     document.getElementById("emailInput").classList.remove("mb-2");
   }
   if (isValid) {
+    document.getElementById("spinnerLoading").classList.remove("d-none");
     emailjs.send("service_y6yx6p6", "template_5ov6wmf", templateParams, "V0EXCnXFo77Yp0lXs").then(
       (response) => {
         alert("Email inviata con successo!");
@@ -56,6 +57,7 @@ const handleSubmit = (e) => {
         document.getElementById("nomeUtenteInput").value = "";
         document.getElementById("emailInput").value = "";
         document.getElementById("testoInput").value = "";
+        document.getElementById("spinnerLoading").classList.add("d-none");
       },
       (error) => {
         console.error("Errore durante l'invio dell'email:", error);
@@ -63,6 +65,7 @@ const handleSubmit = (e) => {
         document.getElementById("nomeUtenteInput").value = "";
         document.getElementById("emailInput").value = "";
         document.getElementById("testoInput").value = "";
+        document.getElementById("spinnerLoading").classList.add("d-none");
       }
     );
   }
