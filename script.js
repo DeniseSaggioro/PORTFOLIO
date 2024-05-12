@@ -1,26 +1,42 @@
-// (function () {
-//   emailjs.init({
-//     publicKey: "V0EXCnXFo77Yp0lXs",
-//   });
-// })();
-
-// let nomeUtente = "";
-// let emailUtente = "";
-// let testo = "";
-// const useState = (param) => {
-//   let state = param;
-//   const changeState = (e) => {
-//     state = e.target.value;
-//   };
-//   return {
-//     state: state,
-//     changeState: changeState,
-//   };
-// };
-// const { nomeUtente: state, setNomeUtente: changeState } = useState("");
+(function () {
+  emailjs.init({
+    publicKey: "V0EXCnXFo77Yp0lXs",
+  });
+})();
 
 const handleSubmit = (e) => {
   e.preventDefault();
+  const nomeUtenteValue = document.getElementById("nomeUtenteInput").value;
+  const emailValue = document.getElementById("emailInput").value;
+  const testoValue = document.getElementById("testoInput").value;
+
+  console.log("Nome Utente:", nomeUtenteValue);
+  console.log("Email:", emailValue);
+  console.log("Testo:", testoValue);
+
+  const templateParams = {
+    from_email: emailValue,
+    from_name: nomeUtenteValue,
+    to_name: "Denise",
+    message: testoValue,
+  };
+
+  emailjs.send("service_y6yx6p6", "template_5ov6wmf", templateParams, "V0EXCnXFo77Yp0lXs").then(
+    (response) => {
+      alert("Email inviata con successo!");
+      console.log("SUCCESS!", response.status, response.text);
+      emailValue = "";
+      testoValue = "";
+      nomeUtenteValue = "";
+    },
+    (error) => {
+      console.error("Errore durante l'invio dell'email:", error);
+      alert("Si è verificato un errore durante l'invio dell'email.");
+      emailValue = "";
+      testoValue = "";
+      nomeUtenteValue = "";
+    }
+  );
 };
 
 // const randomNavigationItemsLightUp = () => {
