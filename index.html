@@ -184,7 +184,12 @@
           </div>
           <div class="col-8">
             <form class="d-flex flex-column" onsubmit="handleSubmit(event)">
-              <input class="mb-2" type="text" placeholder="Inserisci il tuo nome" onchange="setNomeUtente(event)" />
+              <input
+                class="mb-2"
+                type="text"
+                placeholder="Inserisci il tuo nome"
+                onchange="() => setNomeUtente(event)"
+              />
               <input class="mb-2" type="mail" placeholder="Inserisci la tua email" />
               <textarea class="mb-4" name="" id="" cols="30" rows="10" placeholder="Scrivimi qui!"></textarea>
               <div class="text-end">
@@ -204,6 +209,6 @@
     integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
     crossorigin="anonymous"
   ></script>
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script> -->
   <script src="./script.js"></script>
 </html>
