@@ -91,4 +91,4 @@ window.addEventListener("scroll", () => {
 });
 homepageLocation();
 // questo commento serve per committare
-// questo commento serve per dimostrare che github ti permette di non litigare
+// questo commento che github ti permette di non litigare
