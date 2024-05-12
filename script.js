@@ -9,34 +9,63 @@ const handleSubmit = (e) => {
   const nomeUtenteValue = document.getElementById("nomeUtenteInput").value;
   const emailValue = document.getElementById("emailInput").value;
   const testoValue = document.getElementById("testoInput").value;
-
-  console.log("Nome Utente:", nomeUtenteValue);
-  console.log("Email:", emailValue);
-  console.log("Testo:", testoValue);
-
+  let isValid = true;
   const templateParams = {
     from_email: emailValue,
     from_name: nomeUtenteValue,
     to_name: "Denise",
     message: testoValue,
   };
-
-  emailjs.send("service_y6yx6p6", "template_5ov6wmf", templateParams, "V0EXCnXFo77Yp0lXs").then(
-    (response) => {
-      alert("Email inviata con successo!");
-      console.log("SUCCESS!", response.status, response.text);
-      emailValue = "";
-      testoValue = "";
-      nomeUtenteValue = "";
-    },
-    (error) => {
-      console.error("Errore durante l'invio dell'email:", error);
-      alert("Si è verificato un errore durante l'invio dell'email.");
-      emailValue = "";
-      testoValue = "";
-      nomeUtenteValue = "";
+  if (nomeUtenteValue === "") {
+    isValid = false;
+    document.getElementById("nameError").style.display = "block";
+    document.getElementById("nameError").innerText = "Inserisci il tuo nome.";
+    document.getElementById("nomeUtenteInput").classList.remove("mb-2");
+  } else {
+    document.getElementById("nameError").style.display = "none";
+    document.getElementById("nomeUtenteInput").classList.add("mb-2");
+  }
+  if (testoValue === "") {
+    isValid = false;
+    document.getElementById("textError").style.display = "block";
+    document.getElementById("textError").innerText = "Scrivimi un messaggio.";
+    document.getElementById("testoInput").classList.remove("mb-4");
+  } else {
+    document.getElementById("textError").style.display = "none";
+    document.getElementById("testoInput").classList.add("mb-4");
+  }
+  if (emailValue !== "") {
+    if (/^[\w-]+(?:.[\w-]+)*@(?:[\w-]+.)+[a-zA-Z]{2,7}$/.test(emailValue)) {
+      document.getElementById("emailError").style.display = "none";
+      document.getElementById("emailInput").classList.add("mb-2");
+    } else {
+      isValid = false;
+      document.getElementById("emailError").style.display = "block";
+      document.getElementById("emailInput").classList.remove("mb-2");
     }
-  );
+  } else {
+    isValid = false;
+    document.getElementById("emailError").style.display = "block";
+    document.getElementById("emailInput").classList.remove("mb-2");
+  }
+  if (isValid) {
+    emailjs.send("service_y6yx6p6", "template_5ov6wmf", templateParams, "V0EXCnXFo77Yp0lXs").then(
+      (response) => {
+        alert("Email inviata con successo!");
+        console.log("SUCCESS!", response.status, response.text);
+        document.getElementById("nomeUtenteInput").value = "";
+        document.getElementById("emailInput").value = "";
+        document.getElementById("testoInput").value = "";
+      },
+      (error) => {
+        console.error("Errore durante l'invio dell'email:", error);
+        alert("Si è verificato un errore durante l'invio dell'email.");
+        document.getElementById("nomeUtenteInput").value = "";
+        document.getElementById("emailInput").value = "";
+        document.getElementById("testoInput").value = "";
+      }
+    );
+  }
 };
 
 // const randomNavigationItemsLightUp = () => {

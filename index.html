@@ -138,7 +138,6 @@
               <div><img src="./assets/icons/icons8-adobe-illustrator.svg" alt="" /></div>
               <div><img src="./assets/icons/icons8-adobe-indesign.svg" alt="" /></div>
               <div><img src="./assets/icons/icons8-adobe-xd.svg" alt="" /></div>
-              <div><img src="./assets/icons/icons8-wordpress.svg" alt="" /></div>
               <div><img src="./assets/icons/icons8-html-5.svg" alt="" /></div>
               <div><img src="./assets/icons/icons8-css3.svg" alt="" /></div>
               <div><img src="./assets/icons/icons8-logo-javascript.svg" alt="" /></div>
@@ -147,7 +146,6 @@
               <div><img src="./assets/icons/icons8-adobe-illustrator.svg" alt="" /></div>
               <div><img src="./assets/icons/icons8-adobe-indesign.svg" alt="" /></div>
               <div><img src="./assets/icons/icons8-adobe-xd.svg" alt="" /></div>
-              <div><img src="./assets/icons/icons8-wordpress.svg" alt="" /></div>
             </div>
           </div>
         </div>
@@ -185,10 +183,59 @@
           <div class="col-8">
             <form class="d-flex flex-column" onsubmit="handleSubmit(event)">
               <input id="nomeUtenteInput" class="mb-2" type="text" placeholder="Inserisci il tuo nome" />
+              <span class="mb-2 ms-4" id="nameError" style="color: red; display: none; font-size: 0.75rem"></span>
               <input id="emailInput" class="mb-2" type="mail" placeholder="Inserisci la tua email" />
+              <span class="mb-2 ms-4" id="emailError" style="color: red; display: none; font-size: 0.75rem"
+                >Inserire un indirizzo email valido.</span
+              >
               <textarea class="mb-4" name="" id="testoInput" cols="30" rows="10" placeholder="Scrivimi qui!"></textarea>
+              <span class="mb-4 ms-4" id="textError" style="color: red; display: none; font-size: 0.75rem"></span>
               <div class="text-end">
-                <button class="cv-button">Invia</button>
+                <button class="cv-button">
+                  <svg
+                    class="pl me-2 m-0"
+                    viewBox="0 0 200 200"
+                    width="200"
+                    height="200"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <defs>
+                      <linearGradient id="pl-grad1" x1="1" y1="0.5" x2="0" y2="0.5">
+                        <stop offset="0%" stop-color="rgb(255,255,255)" />
+                        <stop offset="100%" stop-color="rgb(239, 227, 10)" />
+                      </linearGradient>
+                      <linearGradient id="pl-grad2" x1="0" y1="0" x2="0" y2="1">
+                        <stop offset="0%" stop-color="rgb(255,255,255)" />
+                        <stop offset="100%" stop-color="rgb(239, 227, 10)" />
+                      </linearGradient>
+                    </defs>
+                    <circle
+                      class="pl__ring"
+                      cx="100"
+                      cy="100"
+                      r="82"
+                      fill="none"
+                      stroke="url(#pl-grad1)"
+                      stroke-width="36"
+                      stroke-dasharray="0 257 1 257"
+                      stroke-dashoffset="0.01"
+                      stroke-linecap="round"
+                      transform="rotate(-90,100,100)"
+                    />
+                    <line
+                      class="pl__ball"
+                      stroke="url(#pl-grad2)"
+                      x1="100"
+                      y1="18"
+                      x2="100.01"
+                      y2="182"
+                      stroke-width="36"
+                      stroke-dasharray="1 165"
+                      stroke-linecap="round"
+                    />
+                  </svg>
+                  Invia
+                </button>
               </div>
             </form>
           </div>
