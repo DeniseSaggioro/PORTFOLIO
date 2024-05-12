@@ -7,20 +7,17 @@
 let nomeUtente = "";
 let emailUtente = "";
 let testo = "";
-const useState = () => {
-  let state = "";
+const useState = (param) => {
+  let state = param;
   const changeState = (e) => {
-    state = e;
+    state = e.target.value;
   };
   return {
     state: state,
     changeState: changeState,
   };
 };
-const changeNomeUtente = (e) => {
-  nomeUtente = e.target.value;
-  console.log(nomeUtente);
-};
+const { nomeUtente: state, setNomeUtente: changeState } = useState("");
 
 const handleSubmit = (e) => {
   e.preventDefault();
