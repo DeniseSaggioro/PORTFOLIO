@@ -15,6 +15,10 @@ body {
   width: 250px;
   animation: fade-cross-anim 1.2s linear;
 }
+.croce-progetti {
+  width: 200px;
+  animation: fade-cross-anim 1.2s linear;
+}
 ul li {
   list-style-type: none;
 }
@@ -123,6 +127,13 @@ h4 {
 .position-tertiary {
   top: 33%;
   right: 15%;
+}
+.position-fourthiary {
+  top: 33%;
+  left: 17%;
+}
+.title-projects {
+  margin-top: 2rem;
 }
 .ind-title span {
   display: block;
