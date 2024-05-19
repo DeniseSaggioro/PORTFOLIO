@@ -3,7 +3,13 @@
     publicKey: "V0EXCnXFo77Yp0lXs",
   });
 })();
-
+function openModal(event) {
+  var card = event.currentTarget;
+  var pseudoElement = window.getComputedStyle(card, "::before");
+  var imgSrc = pseudoElement.getPropertyValue("background-image");
+  imgSrc = imgSrc.slice(5, -2);
+  document.getElementById("modalImage").src = imgSrc;
+}
 const handleSubmit = (e) => {
   e.preventDefault();
   const nomeUtenteValue = document.getElementById("nomeUtenteInput").value;
@@ -70,45 +76,6 @@ const handleSubmit = (e) => {
     );
   }
 };
-
-// const randomNavigationItemsLightUp = () => {
-//   let navItems = document.querySelectorAll(".nav-item-init-anim");
-
-//   const rndmNum = [];
-//   for (let i = 0; i < 5; i++) {
-//     let rndm = Math.floor(Math.random() * 4);
-//     if (rndmNum[rndmNum.length - 1] !== rndm) {
-//       rndmNum.push(rndm);
-//     }
-//     console.log(rndmNum);
-//   }
-//   const illuminateNavItems = (index) => {
-//     return new Promise((resolve) => {
-//       if (index < rndmNum.length) {
-//         setTimeout(() => {
-//           console.log("Ho selezionato questo item: " + rndmNum[index]);
-
-//           navItems[rndmNum[index]].classList.add("nav-item-selected");
-
-//           setTimeout(() => {
-//             navItems[rndmNum[index]].classList.remove("nav-item-selected");
-//             illuminateNavItems(index + 1).then(resolve);
-//           }, 120 + 120 * index);
-//         }, 120 + 120 * index);
-//       } else {
-//         resolve();
-//       }
-//     });
-//   };
-
-//   // Esegui l'animazione e, una volta completata, esegui homepageLocation
-//   illuminateNavItems(0).then(() => {
-//     homepageLocation();
-//   });
-//   window.addEventListener("scroll", () => {
-//     homepageLocation();
-//   });
-// };
 const homepageLocation = () => {
   let navItems = document.querySelectorAll(".nav-item-init-anim");
   const homePage = document.getElementById("homepage");
