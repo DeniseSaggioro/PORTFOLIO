@@ -43,10 +43,10 @@
       <section id="homepage" class="m-page">
         <div class="position-relative mb-5">
           <img class="croce" src="./assets/image/croce.png" alt="croce" />
-          <h1 class="ind-title position-primary">Junior Web<br /><span>Graphic Designer</span></h1>
+          <h1 class="ind-title position-primary">Junior Web<br class="d-none" /><span>Graphic Designer</span></h1>
         </div>
         <div class="row">
-          <div class="col-8">
+          <div class="col-12">
             <p class="text-anim">
               Ciao! Mi chiamo Denise e sono una junior web graphic designer. Ho studiato presso Accademia delle
               Professioni e ora sono alla ricerca di un lavoro stimolante, che mi dia la possibilità di esprimere la mia
@@ -54,17 +54,17 @@
               memorabili con i quali farmi riconoscere e trasmettere la mia visione positiva e passionale.
             </p>
           </div>
-          <div class="col-4"></div>
+          <div class="d-none"></div>
         </div>
       </section>
 
       <section id="progetti" class="m-page">
         <div class="row m-progetti">
-          <div class="position-relative col-5">
+          <div class="position-relative col-12 col-lg-6 mb-5">
             <img class="croce" src="./assets/image/croce.png" alt="croce" />
             <h2 class="ind-title position-secondary">Progetti</h2>
           </div>
-          <div class="col-7 d-flex justify-content-center align-items-center">
+          <div class="col-12 col-lg-6 d-flex justify-content-center align-items-center">
             <p class="reverse-text-anim">
               Ho intrapreso questa strada per poter ascoltare le persone, raccogliere le loro idee e, attraverso tutte
               le competenze che ho appreso sia in corso che in autonomia, creare progetti innovativi con grafiche oltre
@@ -115,13 +115,13 @@
 
       <section id="competenze" class="m-page">
         <div class="row m-competenze">
-          <div class="col-5">
-            <img id="foto-personale" src="./assets/image/IMG20240208152424.jpg" alt="foto-personale" />
+          <div class="col-12 col-lg-6 text-center mb-5">
+            <img id="foto-personale" src="./assets/image/foto_personale.jpg" alt="foto-personale" />
           </div>
-          <div class="col-7 d-flex justify-content-between flex-column">
+          <div class="col-12 col-lg-6 d-flex justify-content-between flex-column">
             <div class="position-relative mb-5 text-end">
               <img class="croce" src="./assets/image/croce.png" alt="croce" />
-              <h2 class="ind-title position-tertiary">Competenze</h2>
+              <h2 class="ind-title position-tertiary">Skills</h2>
             </div>
             <p class="reverse-text-anim">
               La mia curiosità e la mia empatia mi accompagnano da sempre, permettendomi di fare attenzione ai dettagli
@@ -161,7 +161,7 @@
 
       <section id="contatti" class="m-page">
         <div class="row mb-5">
-          <div class="col-7 d-flex justify-content-center align-items-center">
+          <div class="col-12 col-lg-6 d-flex justify-content-center align-items-center order-text">
             <p class="text-anim">
               Voglio creare contenuti che diano sempre più visibilità ai clienti che si rivolgono a me anche attraverso
               un'interfaccia grafica che si possa percepire come un'esperienza e dove la UX risulti fluida, intuitiva e
@@ -169,26 +169,21 @@
               piattaforme social.
             </p>
           </div>
-          <div class="position-relative mb-5 col-5 text-end">
+          <div class="position-relative mb-5 col-12 col-lg-6 text-end order-title">
             <img class="croce" src="./assets/image/croce.png" alt="croce" />
-            <h2 class="ind-title position-secondary">Contatti</h2>
+            <h2 class="ind-title position-fourthiary">Contatti</h2>
           </div>
         </div>
         <div class="row">
-          <div class="col-4 d-flex flex-column justify-content-between">
+          <div class="col-12 d-flex flex-column justify-content-between">
             <div id="recapiti">
               <h4>Telefono</h4>
               <p>345 / 9476904</p>
               <h4>Email</h4>
               <p>denisesaggioro74@gmail.com</p>
             </div>
-            <div id="social">
-              <button class="me-2"><i class="bi bi-instagram fs-3"></i></button>
-              <button class="me-2"><i class="bi bi-linkedin fs-3"></i></button>
-              <button class="me-2"><i class="bi bi-discord fs-3"></i></button>
-            </div>
           </div>
-          <div class="col-8">
+          <div class="col-12">
             <form class="d-flex flex-column" onsubmit="handleSubmit(event)">
               <input id="nomeUtenteInput" class="mb-2" type="text" placeholder="Inserisci il tuo nome" />
               <span class="mb-2 ms-4" id="nameError" style="color: red; display: none; font-size: 0.75rem"></span>
@@ -202,7 +197,7 @@
                 <button class="cv-button">
                   <svg
                     id="spinnerLoading"
-                    class="pl me-2 m-0"
+                    class="pl me-2 m-0 d-none"
                     viewBox="0 0 200 200"
                     width="200"
                     height="200"
@@ -252,7 +247,13 @@
       </section>
     </div>
     <footer>
-      <!--inserire tipico "diritti riservati ecc...."-->
+      <div id="social" class="col-12">
+        <button class="me-2"><i class="bi bi-instagram fs-3"></i></button>
+        <a href="https://www.linkedin.com/in/denise-saggioro-graphic-designer"
+          ><button class="me-2"><i class="bi bi-linkedin fs-3"></i></button
+        ></a>
+        <button class="me-2"><i class="bi bi-discord fs-3"></i></button>
+      </div>
     </footer>
   </body>
   <script

@@ -160,5 +160,3 @@ window.addEventListener("scroll", () => {
   homepageLocation();
 });
 homepageLocation();
-// questo commento serve per committare
-// questo commento serve per committare
