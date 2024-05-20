@@ -48,6 +48,10 @@ h2 {
 .nav-index {
   z-index: 100;
 }
+.panino {
+  border-color: #723c8f;
+  background-color: #fffb66;
+}
 p {
   color: white;
   font-family: Helvetica, sans-serif;
